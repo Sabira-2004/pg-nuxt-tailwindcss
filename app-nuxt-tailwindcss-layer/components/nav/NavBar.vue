@@ -2,12 +2,10 @@
   const { allNavs, navsPrimary, navsSecondary, currentPath } = useNavMenu()
 </script>
 <template>
-  <div
-    class="w-full border-b border-white/10 bg-[#0a1422]/95 text-white shadow-lg shadow-[#07111d]/10 backdrop-blur-xl"
-  >
+  <div class="w-full">
     <nav class>
       <div class="container mx-auto px-4 sm:px-6">
-        <div class="flex h-20 items-center justify-between">
+        <div class="flex h-24 items-center justify-between">
           <div class="flex items-center justify-between w-full">
             <div class="flex flex-shrink-0 items-center">
               <TheLogo />

@@ -4,9 +4,8 @@
 
 export default {
   title: 'Vue Designer',
-  description:
-    'Vue Designer is a desktop drag-and-drop editor for visually designing Vue apps.',
-  logo: 'i-material-symbols-design-services-outline-rounded',
+  description: 'Vue Designer Nuxt Tailwind CSS - Quick start template',
+  logo: 'i-vscode-icons:file-type-coffeelint',
   author: 'Pinegrow',
   url: 'https://pg-nuxt-tailwindcss.netlify.app',
   github: 'https://github.com/pinegrow/pg-nuxt-tailwindcss',

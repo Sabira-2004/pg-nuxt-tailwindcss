@@ -7,131 +7,165 @@
   const logo = {
     alt: 'vue-designer',
     cover: true,
-    ...optimizeImage(
-      vueDesignerLogo,
-      /* options */
-      {
-        // placeholder: false, // placeholder image before the actual image is fully loaded.
-      },
-    ),
+    ...optimizeImage(vueDesignerLogo),
   }
 </script>
 <template>
-  <div class="px-4 py-24 relative bg-primary-600 dark:bg-primary-200">
-    <div class="container mx-auto flex flex-wrap items-center justify-center">
-      <div class="mx-auto p-4 w-full lg:w-6/12">
-        <div class="p-4 rounded-2xl shadow-xl">
-          <div class="flex items-center justify-center pb-4 lg:justify-start">
-            <h3 class="capitalize mb-0 text-primary-100 dark:text-primary-700">
-              Feature Walkthrough
-            </h3>
+  <section class="bg-secondary-900 px-4 py-24 text-neutral-50">
+    <div class="container mx-auto">
+      <div
+        class="mb-12 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between"
+      >
+        <div class="max-w-2xl">
+          <p
+            class="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-primary-300"
+          >
+            See the workflow
+          </p>
+          <h2 class="mb-4 text-white">
+            From first component to polished interface.
+          </h2>
+          <p class="max-w-xl text-base leading-7 text-neutral-300">
+            Open your Vue project, follow the Config Panel setup, and work
+            visually with responsive components while keeping your usual
+            development workflow.
+          </p>
+        </div>
+        <BaseButton
+          to="https://vuedesigner.com"
+          target="_blank"
+          color="primary"
+          size="lg"
+          trailing-icon="i-material-symbols-open-in-new"
+          label="Explore Vue Designer"
+          class="!text-secondary-950"
+        />
+      </div>
+      <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+        <div
+          class="rounded-3xl border border-neutral-50/10 bg-secondary-950/35 p-3 shadow-2xl sm:p-5"
+        >
+          <div class="mb-4 flex items-center justify-between px-2">
+            <h3 class="mb-0 text-xl text-white">Feature walkthrough</h3>
+            <span
+              class="rounded-full bg-primary-400/15 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary-200"
+            >
+              Quick start
+            </span>
           </div>
-          <div>
+          <div class="relative overflow-hidden rounded-2xl bg-secondary-950">
             <div
               v-if="showTitle"
-              class="absolute flex items-center justify-center ml-2 my-0.5 z-10"
+              class="absolute left-4 top-4 z-10 flex items-center rounded-full bg-secondary-950/85 px-3 py-2 backdrop-blur-sm"
             >
-              <div class="h-[28px] w-[28px]">
+              <div class="h-7 w-7">
                 <img v-bind="logo" />
               </div>
-              <span class="ml-1 mt-1 p-1 text-lg text-neutral-50"
-                >Vue Designer - Quick Start</span
-              >
+              <span class="ml-2 text-sm font-medium text-white">
+                Vue Designer - Quick Start
+              </span>
             </div>
             <lite-youtube
               ref="youtube"
               videoid="1WDZdu6XwI8"
               title="Vue Designer - Quick Start"
               playlabel="Vue Designer - Quick Start"
-              class="px-4 py-12 rounded"
+              class="min-h-[280px] w-full rounded-2xl px-4 py-12 sm:min-h-[360px]"
               @click="showTitle = false"
             />
           </div>
         </div>
-      </div>
-      <div class="flex-col flex mx-auto p-4 w-full lg:w-6/12">
-        <div class="flex flex-wrap sm:flex-nowrap">
-          <div
-            class="flex flex-col items-center p-4 w-full sm:w-1/2 md:flex-1 md:w-1/3 lg:items-start lg:pl-8"
+        <div>
+          <p
+            class="mb-5 text-sm font-semibold uppercase tracking-[0.18em] text-primary-300"
           >
-            <ul class="text-center lg:mt-2 lg:text-left">
-              <li class="mb-4">
-                <BaseButton
-                  to="https://pinegrow.com/docs/vue/"
-                  external
-                  target="_blank"
-                  variant="link"
-                  class="!text-white dark:text-primary-800"
-                  color="white"
-                  >Documentation</BaseButton
-                >
-              </li>
-              <li class="mb-4">
-                <BaseButton
-                  to="https://www.youtube.com/@vuedesigner/playlists"
-                  external
-                  target="_blank"
-                  variant="link"
-                  class="!text-white dark:text-primary-800"
-                  color="white"
-                  >Video Tutorials</BaseButton
-                >
-              </li>
-              <li class="mb-4">
-                <BaseButton
-                  to="https://pinegrow.com/docs/vue/support/"
-                  external
-                  target="_blank"
-                  variant="link"
-                  class="!text-white dark:text-primary-800"
-                  color="white"
-                  >Support</BaseButton
-                >
-              </li>
-            </ul>
-          </div>
-          <div
-            class="flex flex-col items-center p-4 w-full sm:w-1/2 md:flex-1 md:w-1/3 lg:items-start lg:pl-8"
-          >
-            <ul class="text-center lg:mt-2 lg:text-left">
-              <li class="mb-4">
-                <BaseButton
-                  to="https://vuedesigner.com"
-                  external
-                  target="_blank"
-                  variant="link"
-                  class="!text-white dark:text-primary-800"
-                  color="white"
-                  >Trial</BaseButton
-                >
-              </li>
-              <li class="mb-4">
-                <BaseButton
-                  to="https://vuedesigner.com/#buy"
-                  external
-                  target="_blank"
-                  variant="link"
-                  class="!text-white dark:text-primary-800"
-                  color="white"
-                  >Purchase</BaseButton
-                >
-              </li>
-              <li class="mb-4">
-                <BaseButton
-                  to="https://discord.gg/BYp45Nnu5T"
-                  external
-                  target="_blank"
-                  variant="link"
-                  class="!text-white dark:text-primary-800"
-                  color="white"
-                  >Community Forum</BaseButton
-                >
-              </li>
-            </ul>
+            Keep learning
+          </p>
+          <div class="grid gap-3 sm:grid-cols-2">
+            <BaseButton
+              to="https://pinegrow.com/docs/vue/"
+              external
+              target="_blank"
+              variant="outline"
+              color="primary"
+              block
+              class="!justify-start !rounded-2xl !px-4 !py-4 !text-left !text-primary-100"
+            >
+              <BaseIcon
+                name="i-mdi-book-open-page-variant-outline"
+                class="h-5 w-5"
+                aria-hidden="true"
+              />
+              <span>Documentation</span>
+            </BaseButton>
+            <BaseButton
+              to="https://www.youtube.com/@vuedesigner/playlists"
+              external
+              target="_blank"
+              variant="outline"
+              color="primary"
+              block
+              class="!justify-start !rounded-2xl !px-4 !py-4 !text-left !text-primary-100"
+            >
+              <BaseIcon
+                name="i-mdi-play-circle-outline"
+                class="h-5 w-5"
+                aria-hidden="true"
+              />
+              <span>Video tutorials</span>
+            </BaseButton>
+            <BaseButton
+              to="https://pinegrow.com/docs/vue/support/"
+              external
+              target="_blank"
+              variant="outline"
+              color="primary"
+              block
+              class="!justify-start !rounded-2xl !px-4 !py-4 !text-left !text-primary-100"
+            >
+              <BaseIcon
+                name="i-mdi-lifebuoy"
+                class="h-5 w-5"
+                aria-hidden="true"
+              />
+              <span>Support</span>
+            </BaseButton>
+            <BaseButton
+              to="https://vuedesigner.com/#buy"
+              external
+              target="_blank"
+              variant="outline"
+              color="primary"
+              block
+              class="!justify-start !rounded-2xl !px-4 !py-4 !text-left !text-primary-100"
+            >
+              <BaseIcon
+                name="i-mdi-rocket-launch-outline"
+                class="h-5 w-5"
+                aria-hidden="true"
+              />
+              <span>Trial and purchase</span>
+            </BaseButton>
+            <BaseButton
+              to="https://discord.gg/BYp45Nnu5T"
+              external
+              target="_blank"
+              variant="outline"
+              color="primary"
+              block
+              class="!justify-start !rounded-2xl !px-4 !py-4 !text-left !text-primary-100 sm:col-span-2"
+            >
+              <BaseIcon
+                name="i-mdi-forum-outline"
+                class="h-5 w-5"
+                aria-hidden="true"
+              />
+              <span>Join the community forum</span>
+            </BaseButton>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 <style scoped></style>

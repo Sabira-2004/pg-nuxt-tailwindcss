@@ -9,18 +9,26 @@
       aria-label="Toggle theme"
       @click="toggleDark()"
     >
-      <transition name="slide" mode="out-in">
-        <BaseIcon
-          v-if="isDark"
-          name="i-material-symbols-dark-mode-outline"
-          class="text-2xl"
-        />
-        <BaseIcon
-          v-else
-          name="i-material-symbols-light-mode-outline"
-          class="text-2xl"
-        />
-      </transition>
+      <ClientOnly>
+        <transition name="slide" mode="out-in">
+          <BaseIcon
+            v-if="isDark"
+            name="i-material-symbols-dark-mode-outline"
+            class="text-2xl"
+          />
+          <BaseIcon
+            v-else
+            name="i-material-symbols-light-mode-outline"
+            class="text-2xl"
+          />
+        </transition>
+        <template #fallback>
+          <BaseIcon
+            name="i-material-symbols-light-mode-outline"
+            class="text-2xl"
+          />
+        </template>
+      </ClientOnly>
     </BaseButton>
   </div>
 </template>

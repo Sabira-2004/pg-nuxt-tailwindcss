@@ -45,7 +45,7 @@
                 />
                 <BaseButton
                   type="submit"
-                  class="ml-2"
+                  class="ml-2 !bg-secondary-800 !text-white hover:!bg-secondary-900 focus-visible:!outline-secondary-950"
                   size="md"
                   color="secondary"
                 >

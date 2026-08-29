@@ -18,13 +18,14 @@
   <div>
     <div
       v-if="isMobileMenuOpen"
-      class="sm:min-w-[200px] rounded-lg shadow overflow-hidden bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-50 px-4 py-5 sm:p-6 z-10"
+      class="sm:min-w-[200px] rounded-lg shadow-xl overflow-hidden bg-[#132235] text-white px-4 py-5 sm:p-6 z-10 ring-1 ring-white/10"
     >
       <div class="space-y-1">
         <BaseButton
           v-for="(nav, index) in navs"
           :key="index"
           :to="nav.to"
+          color="white"
           :variant="nav.to === currentPath ? 'solid' : 'ghost'"
           block
           class="!rounded-lg whitespace-nowrap"

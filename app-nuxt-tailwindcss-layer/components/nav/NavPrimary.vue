@@ -14,28 +14,32 @@
 </script>
 
 <template>
-  <div class="h-full items-center">
-    <div class="flex h-full space-x-2">
+  <div class="flex h-full items-center">
+    <div class="flex h-full items-center space-x-1">
       <BaseButton
         v-for="(nav, index) in navs"
         :key="index"
         :to="nav.to"
         :label="nav.title"
         size="lg"
+        color="white"
         :variant="nav.to === currentPath ? 'solid' : 'ghost'"
-        class="!rounded-lg"
+        class="!rounded-lg !text-sm"
       />
     </div>
     <BaseButton
-      class="ml-3"
+      class="ml-4 !rounded-full !bg-[#5ee1a4] !font-semibold !text-[#08141f] hover:!bg-[#8cefc0]"
       target="_blank"
       to="https://vuedesigner.com"
       size="xl"
-      color="secondary"
+      color="white"
     >
-      <span class="pl-2">Try Now</span>
+      <span>Try Now</span>
       <template #trailing>
-        <BaseIcon name="i-mdi-pine-tree" height="24px" />
+        <BaseIcon
+          name="i-material-symbols-arrow-outward-rounded"
+          height="18px"
+        />
       </template>
     </BaseButton>
   </div>

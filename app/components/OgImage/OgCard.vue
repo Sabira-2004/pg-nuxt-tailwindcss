@@ -31,7 +31,7 @@
     },
     logo: {
       type: String,
-      default: 'i-vscode-icons:file-type-coffeelint',
+      default: 'i-material-symbols-design-services-outline-rounded',
     },
     author: {
       type: String,

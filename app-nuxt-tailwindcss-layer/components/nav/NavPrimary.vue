@@ -22,22 +22,21 @@
         :to="nav.to"
         :label="nav.title"
         size="lg"
-        variant="ghost"
-        color="white"
-        class="!rounded-full !px-4 !text-slate-300 hover:!bg-white/10 hover:!text-white"
-        :class="nav.to === currentPath ? '!bg-white/10 !text-white' : ''"
+        :variant="nav.to === currentPath ? 'solid' : 'ghost'"
+        class="!rounded-lg"
       />
     </div>
     <BaseButton
-      class="ml-3 !rounded-full !bg-[#6d5efc] !px-5 !py-2.5 !text-white shadow-lg shadow-[#6d5efc]/20 hover:!bg-[#5b4de0]"
+      class="ml-3"
       target="_blank"
       to="https://vuedesigner.com"
       size="xl"
-      color="primary"
-      trailing
-      trailing-icon="i-material-symbols-arrow-forward-rounded"
+      color="secondary"
     >
-      <span>Try Now</span>
+      <span class="pl-2">Try Now</span>
+      <template #trailing>
+        <BaseIcon name="i-mdi-pine-tree" height="24px" />
+      </template>
     </BaseButton>
   </div>
 </template>

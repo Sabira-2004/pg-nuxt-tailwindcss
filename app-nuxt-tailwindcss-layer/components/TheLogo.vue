@@ -1,22 +1,12 @@
 <script setup lang="ts">
   import siteMeta from '@/site'
-  const { title } = siteMeta
+  const { title, logo } = siteMeta
 </script>
 <template>
-  <NuxtLink
-    data-pg-name="Logo"
-    class="group flex items-center gap-3"
-    to="/"
-    aria-label="Vue Designer home"
-  >
-    <img
-      src="/vue-designer.svg"
-      alt=""
-      aria-hidden="true"
-      class="h-9 w-9 transition group-hover:scale-105"
-    />
+  <NuxtLink data-pg-name="Logo" class="flex items-center sm:flex-row" to="/">
+    <BaseIcon height="40" class="mt-2" :name="logo" />
     <h6
-      class="!mb-0 !text-lg font-semibold tracking-[-0.03em] text-white sm:!text-xl"
+      class="text-primary-600 dark:text-primary-200 font-extrabold font-serif ml-2 mt-4 text-2xl"
     >
       {{ title }}
     </h6>

@@ -3,9 +3,9 @@
 </script>
 <template>
   <div class="w-full">
-    <nav class>
-      <div class="container mx-auto px-4 sm:px-6">
-        <div class="flex h-24 items-center justify-between">
+    <nav aria-label="Main navigation">
+      <div class="container mx-auto px-6 sm:px-8 lg:px-12">
+        <div class="flex h-20 items-center justify-between">
           <div class="flex items-center justify-between w-full">
             <div class="flex flex-shrink-0 items-center">
               <TheLogo />
@@ -13,7 +13,7 @@
             <NavPrimary
               :navs="navsPrimary"
               :current-path="currentPath"
-              class="hidden sm:flex sm:ml-6"
+              class="hidden sm:flex sm:ml-8"
             />
           </div>
           <DarkModeSwitch />

@@ -2,10 +2,11 @@
   import { isDark, toggleDark } from '@/composables/dark'
 </script>
 <template>
-  <div class="mx-3">
+  <div class="mx-2">
     <BaseButton
       variant="ghost"
-      class="!rounded-lg"
+      color="white"
+      class="!rounded-full !text-slate-300 hover:!bg-white/10 hover:!text-white"
       aria-label="Toggle theme"
       @click="toggleDark()"
     >

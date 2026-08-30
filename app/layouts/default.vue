@@ -20,11 +20,13 @@
   <div>
     <!-- <div class="container mx-auto"> -->
     <div
-      class="min-h-screen flex flex-col bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-50"
+      class="min-h-screen flex flex-col bg-white text-neutral-900 dark:bg-[#0b1020] dark:text-neutral-50"
     >
-      <NavBar class="fixed shadow z-20 bg-white dark:bg-neutral-950" />
-      <div class="mt-24">
-        <main class="shadow">
+      <NavBar
+        class="fixed inset-x-0 top-0 z-20 border-b border-white/10 bg-[#0b1020]/90 text-white shadow-none backdrop-blur-xl"
+      />
+      <div class="mt-20">
+        <main>
           <slot />
         </main>
       </div>

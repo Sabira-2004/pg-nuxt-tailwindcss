@@ -9,6 +9,18 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply antialiased;
+  }
+
+  ::selection {
+    @apply bg-primary-200 text-primary-900;
+  }
+
   h1 {
     @apply text-4xl font-bold md:text-5xl lg:text-6xl  tracking-tight;
   }

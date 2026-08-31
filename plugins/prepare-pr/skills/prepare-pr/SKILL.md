@@ -1,18 +1,19 @@
 ---
 name: prepare-pr
-description: Inspect the current Git branch and draft a professional pull request description. Use when asked to prepare or write PR copy; do not create, publish, or modify a pull request.
+description: Inspect the current Git branch and its staged, unstaged, and untracked changes, then draft a professional pull request description. Use when asked to prepare or write PR copy; do not create, publish, or modify a pull request.
 ---
 
 # Prepare a pull request description
 
-Inspect the current branch before writing. Read the repository's `AGENTS.md` and `README.md` for local conventions and validation commands. Identify the comparison base from the branch's upstream or the repository's default branch; if it cannot be determined, state the comparison assumption.
+Do not modify the working tree. Read the repository's `AGENTS.md` and `README.md`, then inspect relevant package scripts, configuration, and changed files for local conventions and validation expectations.
 
-Gather evidence from both committed and uncommitted work as applicable:
+## Gather evidence
 
-- branch and working-tree status;
-- commits and changed-file summary against the comparison base;
-- relevant diffs, configuration changes, and affected behavior;
-- validation that is documented in the Git history, change notes, or current-session evidence.
+1. Record the current branch and `git status --short`.
+2. Determine the comparison base in this order: the branch upstream, the repository's default remote branch, then the nearest usable parent commit. If no base can be established, state the assumption explicitly.
+3. Inspect committed branch work against that base with the commit list, changed-file summary, and diff. Also inspect `git diff --cached`, `git diff`, and standard untracked files so staged, unstaged, and new work are all represented.
+4. Read the relevant implementation and documentation rather than relying on commit messages alone. Note important design, dependency, compatibility, or scope decisions.
+5. Collect validation only from observable evidence such as commands run in the current session, repository scripts, CI results, or documented change notes. Do not claim a check was run when it was not.
 
 Draft the description in this structure:
 
@@ -39,6 +40,6 @@ Draft the description in this structure:
 - **After:** ...
 ```
 
-Keep each statement specific to observed evidence. Explain meaningful implementation choices and user-facing or operational differences rather than restating file names or raw diffs. Do not claim validation that was not performed; label unavailable checks as `Not run`. Omit sections that have no relevant evidence only when doing so makes the description clearer.
+Make before/after statements from the actual base and current files or behavior: describe the previous state, the resulting state, and the user-visible or operational difference. For new work, state that the capability was absent before. Keep every statement specific to observed evidence, explain meaningful implementation choices and outcomes rather than restating file names or raw diffs, and label unavailable validation as `Not run`.
 
 Return the final description ready to paste into a pull request. Do not commit, push, open a pull request, or alter the working tree unless the user explicitly asks.

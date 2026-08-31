@@ -9,6 +9,9 @@ dist
 .DS_Store
 .unlighthouse
 
+# Codex-managed agent metadata is tracked but read-only in local workspaces.
+.agents/plugins/marketplace.json
+
 # Pinegrow
 _pgbackup
 _pginfo

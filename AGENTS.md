@@ -1,25 +1,28 @@
 # Repository guide for coding agents
 
-## Start here
+## Orientation
 
-- Read [README.md](README.md) for setup, available scripts, and project capabilities. Before UI work, also read `nuxt.config.ts`, `tailwind.config.ts`, `themes/pg-tailwindcss/tokens.mjs`, and the route and components you will change.
-- This is a Nuxt 3 / Vue 3 project designed for Vue Designer and Pinegrow. Keep the existing module configuration, layer structure, and file-based routing intact unless the task explicitly requires a coordinated change.
+- Read [README.md](README.md) for the project purpose, setup, stack, and available scripts; reference it instead of duplicating those instructions here.
+- This is a Nuxt 3 / Vue 3 project for Vue Designer and Pinegrow. Preserve the existing Nuxt modules, `app-nuxt-tailwindcss-layer`, file-based routing, and Vue Designer configuration unless the task explicitly requires a coordinated change.
+- Before UI work, inspect `nuxt.config.ts`, `tailwind.config.ts`, `themes/pg-tailwindcss/tokens.mjs`, and the route, layout, and components in scope.
 
-## Implementation conventions
+## Stack and conventions
 
-- Use Vue Composition API with `<script setup>`, Tailwind utilities, and the project's existing semantic components and composables (including `BaseButton`, `BaseIcon`, `useOptimizeImage`, and `NuxtImg`) where applicable.
-- Use UnoCSS icon names with the `i-` prefix. Do not introduce a competing icon approach or dependencies without approval.
-- Treat `themes/pg-tailwindcss/tokens.mjs` and `tailwind.config.ts` as the visual source of truth. Use configured Tailwind palettes (such as `primary-*`, `secondary-*`, `tertiary-*`, and `neutral-*`) and background tokens; do not add arbitrary hex color utilities unless updating the token system is explicitly in scope.
-- Preserve existing image handling, links, metadata, accessibility labels, and external-link behavior unless the task calls for a change.
+- Use Vue Composition API with `<script setup>`, Tailwind utilities, and the existing primitives/composables such as `BaseButton`, `BaseIcon`, `useOptimizeImage`, and `NuxtImg`.
+- Use UnoCSS icon names with the `i-` prefix. Do not add a competing icon system or dependency without explicit scope.
+- Treat `themes/pg-tailwindcss/tokens.mjs` and `tailwind.config.ts` as the visual source of truth. Use configured palettes (`primary-*`, `secondary-*`, `tertiary-*`, `neutral-*`, and semantic colors); do not add arbitrary color values in components.
+- `tailwind.config.ts` imports `tokens.mjs`; keep `tokens.cjs` synchronized when Pinegrow tooling requires it, and verify parity after token changes.
+- Preserve existing image handling, approved remote domains, links, metadata, accessibility labels, and external-link behavior unless the task calls for a change. Use official product sources for new marketing claims.
 
-## Scope and visual consistency
+## Scope and consistency
 
-- Keep changes scoped to the requested route by default. Editing the shared layer, layouts, global CSS, site metadata, OG components, or design tokens affects multiple routes; identify and review the affected pages first, and seek direction if the wider change is not clearly requested.
-- When shared UI or palette changes are in scope, keep Home, Quick Start, Subscribe, error states, light/dark mode, and desktop/mobile views visually coherent.
-- Do not make unrelated opportunistic fixes. Record them separately and ask before changing them.
+- Keep changes route-scoped by default. Changes to shared components, layouts, global CSS, site metadata, OG components, or design tokens affect multiple routes and require an explicit reason.
+- When shared UI or tokens change, review Home, Quick Start, Subscribe, error states, shared navigation, light/dark mode, and desktop/mobile views for visual and functional consistency.
+- Do not make unrelated opportunistic fixes. Note them separately instead of folding them into the requested change.
 
-## Validation
+## Validation and handoff
 
-- Begin with a clean-status check and capture relevant baseline behavior before changes.
-- Run the checks appropriate to the scope, using the scripts documented in the README: formatting/linting, `npm run build`, and `npm run generate` for static output when relevant. Review affected routes in a browser at desktop and mobile widths.
-- Report validation performed and distinguish pre-existing failures from changes introduced by the work.
+- Start with `git status --short` and capture relevant baseline behavior/checks before editing, so pre-existing failures are distinguishable from regressions.
+- Use the validation scripts documented in `README.md`: run formatting/linting, `npm run build`, and `npm run generate` when relevant. Inspect the result of auto-fixing commands and do not leave unrelated formatting changes.
+- Review affected routes in a browser at desktop and mobile widths; for shared changes, exercise the route/theme matrix above. Check image loading, navigation, and console errors where applicable.
+- In the final handoff, summarize the files changed, validation performed, and any failures or limitations, clearly identifying failures reproduced from the baseline.

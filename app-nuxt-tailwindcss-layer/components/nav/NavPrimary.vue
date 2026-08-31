@@ -31,11 +31,11 @@
       target="_blank"
       to="https://vuedesigner.com"
       size="xl"
-      color="secondary"
+      color="primary"
     >
       <span class="pl-2">Try Now</span>
       <template #trailing>
-        <BaseIcon name="i-mdi-pine-tree" height="24px" />
+        <BaseIcon name="i-mdi-arrow-top-right" height="24px" />
       </template>
     </BaseButton>
   </div>

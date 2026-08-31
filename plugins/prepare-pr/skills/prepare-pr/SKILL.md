@@ -12,7 +12,7 @@ Prepare a pull request description from the repository state. This skill is read
 1. Identify the current branch with `git branch --show-current`.
 2. Check the working tree with `git status --short`.
 3. Review both unstaged and staged changes with `git diff` and `git diff --cached`, including their stat summaries.
-4. If a base branch is known from the task or repository context, inspect the committed range from that base to `HEAD`; otherwise use recent history and the available working-tree diffs without inventing a base.
+4. Resolve the committed review range explicitly: inspect the current branch's upstream with `git rev-parse --abbrev-ref --symbolic-full-name @{upstream}` when available, compare it with the repository's likely base branch, and use `git merge-base`/`git diff <base>...HEAD` to detect divergent histories. Never describe commits that are not reachable from the current `HEAD`.
 5. Read the changed files and nearby tests, documentation, configuration, and shared components needed to understand intent and project conventions.
 6. Record only validation that is evidenced by the current task context or by commands you run. Treat missing, failing, or skipped checks as such.
 
@@ -46,3 +46,5 @@ Return only a polished PR description using this structure:
 ```
 
 Keep it specific to the inspected changes, concise enough for a pull request, and honest about uncertainty. Mention notable risks or follow-up work only when the diffs support them.
+
+If the expected change is missing from the current branch or the branch base is ambiguous, add a brief `## Notes / risks` section that states the discrepancy and its impact on the proposed pull request.

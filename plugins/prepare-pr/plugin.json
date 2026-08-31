@@ -1,0 +1,7 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "prepare-pr",
+  "version": "0.1.0",
+  "description": "Prepare evidence-based pull request descriptions from the current Git branch.",
+  "repository": "https://github.com/pinegrow/pg-nuxt-tailwindcss"
+}

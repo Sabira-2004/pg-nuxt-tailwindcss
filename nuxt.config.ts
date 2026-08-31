@@ -159,6 +159,7 @@ export default defineNuxtConfig({
       'res.cloudinary.com',
       'avatars.githubusercontent.com',
       'gravatar.com',
+      'pinegrow.com',
     ],
 
     alias: {

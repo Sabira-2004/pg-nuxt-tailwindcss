@@ -95,11 +95,11 @@
    >
    > The PR description should cover:
    >
-   > * what changed
-   > * why it changed
-   > * important implementation decisions
-   > * validation performed
-   > * relevant before/after differences
+   > - what changed
+   > - why it changed
+   > - important implementation decisions
+   > - validation performed
+   > - relevant before/after differences
    >
    > Keep the plugin and skill small and focused. Do not add unrelated capabilities.
 

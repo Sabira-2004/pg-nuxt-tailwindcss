@@ -154,6 +154,7 @@ export default defineNuxtConfig({
     //   baseURL: url,
     // },
     domains: [
+      'pinegrow.com',
       'images.unsplash.com',
       'fakestoreapi.com',
       'res.cloudinary.com',

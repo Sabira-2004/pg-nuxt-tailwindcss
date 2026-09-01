@@ -32,11 +32,9 @@
       to="https://vuedesigner.com"
       size="xl"
       color="secondary"
+      trailing-icon="i-material-symbols-arrow-outward"
     >
-      <span class="pl-2">Try Now</span>
-      <template #trailing>
-        <BaseIcon name="i-mdi-pine-tree" height="24px" />
-      </template>
+      <span class="pl-2">Try Vue Designer</span>
     </BaseButton>
   </div>
 </template>

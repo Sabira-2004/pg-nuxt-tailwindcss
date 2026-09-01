@@ -14,28 +14,28 @@
 </script>
 
 <template>
-  <div class="h-full items-center">
-    <div class="flex h-full space-x-2">
+  <div class="items-center gap-1">
+    <div class="flex items-center gap-1">
       <BaseButton
         v-for="(nav, index) in navs"
         :key="index"
         :to="nav.to"
         :label="nav.title"
-        size="lg"
+        size="md"
         :variant="nav.to === currentPath ? 'solid' : 'ghost'"
-        class="!rounded-lg"
+        class="!rounded-xl px-3.5"
       />
     </div>
     <BaseButton
-      class="ml-3"
+      class="ml-3 !rounded-xl"
       target="_blank"
       to="https://vuedesigner.com"
-      size="xl"
+      size="lg"
       color="secondary"
     >
-      <span class="pl-2">Try Now</span>
+      <span>Try Vue Designer</span>
       <template #trailing>
-        <BaseIcon name="i-mdi-pine-tree" height="24px" />
+        <BaseIcon name="i-material-symbols-arrow-outward" height="19px" />
       </template>
     </BaseButton>
   </div>

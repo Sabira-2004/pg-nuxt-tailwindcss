@@ -3,6 +3,26 @@
 
   const showTitle = ref(true)
 
+  const productFeatures = [
+    {
+      icon: 'i-material-symbols-data-object-outline',
+      title: 'Live data',
+      description:
+        'Design responsive components with real, dynamic content in view.',
+    },
+    {
+      icon: 'i-material-symbols-account-tree-outline',
+      title: 'Component tree',
+      description: 'Navigate and shape your app visually as it grows.',
+    },
+    {
+      icon: 'i-material-symbols-auto-awesome-motion',
+      title: 'Tailwind-ready',
+      description:
+        'Use the Tailwind CSS add-on and keep your theme in your hands.',
+    },
+  ]
+
   const { optimizeImage } = useOptimizeImage()
   const logo = {
     alt: 'vue-designer',
@@ -17,25 +37,69 @@
   }
 </script>
 <template>
-  <div class="px-4 py-24 relative bg-primary-600 dark:bg-primary-200">
-    <div class="container mx-auto flex flex-wrap items-center justify-center">
-      <div class="mx-auto p-4 w-full lg:w-6/12">
-        <div class="p-4 rounded-2xl shadow-xl">
-          <div class="flex items-center justify-center pb-4 lg:justify-start">
-            <h3 class="capitalize mb-0 text-primary-100 dark:text-primary-700">
-              Feature Walkthrough
-            </h3>
+  <section
+    id="walkthrough"
+    aria-labelledby="walkthrough-title"
+    class="relative overflow-hidden bg-secondary-950 px-4 py-20 text-white dark:bg-neutral-950 sm:px-6 lg:px-8 lg:py-24"
+  >
+    <div
+      aria-hidden="true"
+      class="pointer-events-none absolute -right-40 top-0 h-96 w-96 rounded-full bg-primary-700/20 blur-3xl"
+    />
+    <div class="container relative mx-auto">
+      <div
+        class="grid items-center gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20"
+      >
+        <div>
+          <p
+            class="text-sm font-bold uppercase tracking-[0.2em] text-primary-300"
+          >
+            See it in action
+          </p>
+          <h2 id="walkthrough-title" class="mt-4 max-w-xl text-white">
+            Build faster with a visual feedback loop.
+          </h2>
+          <p class="mt-5 max-w-xl text-lg leading-8 text-secondary-100">
+            Explore the quick-start walkthrough, then keep learning with the Vue
+            Designer documentation and community resources.
+          </p>
+          <div
+            class="mt-8 flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row"
+          >
+            <BaseButton
+              to="https://pinegrow.com/docs/vue/"
+              external
+              target="_blank"
+              color="primary"
+              size="lg"
+              label="Read documentation"
+              trailing-icon="i-material-symbols-arrow-outward"
+            />
+            <BaseButton
+              to="https://vuedesigner.com"
+              external
+              target="_blank"
+              color="white"
+              variant="outline"
+              size="lg"
+              label="Try Vue Designer"
+            />
           </div>
-          <div>
+        </div>
+
+        <div
+          class="rounded-3xl border border-white/10 bg-white/5 p-3 shadow-2xl sm:p-4"
+        >
+          <div class="relative overflow-hidden rounded-2xl bg-neutral-900">
             <div
               v-if="showTitle"
-              class="absolute flex items-center justify-center ml-2 my-0.5 z-10"
+              class="absolute left-4 top-4 z-10 flex items-center gap-2 rounded-full bg-secondary-950/80 px-3 py-2 backdrop-blur"
             >
-              <div class="h-[28px] w-[28px]">
-                <img v-bind="logo" />
+              <div class="h-6 w-6">
+                <img v-bind="logo" alt="Vue Designer" />
               </div>
-              <span class="ml-1 mt-1 p-1 text-lg text-neutral-50"
-                >Vue Designer - Quick Start</span
+              <span class="text-sm font-semibold text-white"
+                >Vue Designer — Quick Start</span
               >
             </div>
             <lite-youtube
@@ -43,95 +107,68 @@
               videoid="1WDZdu6XwI8"
               title="Vue Designer - Quick Start"
               playlabel="Vue Designer - Quick Start"
-              class="px-4 py-12 rounded"
+              class="min-h-72 w-full rounded-2xl sm:min-h-96"
               @click="showTitle = false"
             />
           </div>
         </div>
       </div>
-      <div class="flex-col flex mx-auto p-4 w-full lg:w-6/12">
-        <div class="flex flex-wrap sm:flex-nowrap">
-          <div
-            class="flex flex-col items-center p-4 w-full sm:w-1/2 md:flex-1 md:w-1/3 lg:items-start lg:pl-8"
-          >
-            <ul class="text-center lg:mt-2 lg:text-left">
-              <li class="mb-4">
-                <BaseButton
-                  to="https://pinegrow.com/docs/vue/"
-                  external
-                  target="_blank"
-                  variant="link"
-                  class="!text-white dark:text-primary-800"
-                  color="white"
-                  >Documentation</BaseButton
-                >
-              </li>
-              <li class="mb-4">
-                <BaseButton
-                  to="https://www.youtube.com/@vuedesigner/playlists"
-                  external
-                  target="_blank"
-                  variant="link"
-                  class="!text-white dark:text-primary-800"
-                  color="white"
-                  >Video Tutorials</BaseButton
-                >
-              </li>
-              <li class="mb-4">
-                <BaseButton
-                  to="https://pinegrow.com/docs/vue/support/"
-                  external
-                  target="_blank"
-                  variant="link"
-                  class="!text-white dark:text-primary-800"
-                  color="white"
-                  >Support</BaseButton
-                >
-              </li>
-            </ul>
-          </div>
-          <div
-            class="flex flex-col items-center p-4 w-full sm:w-1/2 md:flex-1 md:w-1/3 lg:items-start lg:pl-8"
-          >
-            <ul class="text-center lg:mt-2 lg:text-left">
-              <li class="mb-4">
-                <BaseButton
-                  to="https://vuedesigner.com"
-                  external
-                  target="_blank"
-                  variant="link"
-                  class="!text-white dark:text-primary-800"
-                  color="white"
-                  >Trial</BaseButton
-                >
-              </li>
-              <li class="mb-4">
-                <BaseButton
-                  to="https://vuedesigner.com/#buy"
-                  external
-                  target="_blank"
-                  variant="link"
-                  class="!text-white dark:text-primary-800"
-                  color="white"
-                  >Purchase</BaseButton
-                >
-              </li>
-              <li class="mb-4">
-                <BaseButton
-                  to="https://discord.gg/BYp45Nnu5T"
-                  external
-                  target="_blank"
-                  variant="link"
-                  class="!text-white dark:text-primary-800"
-                  color="white"
-                  >Community Forum</BaseButton
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
+
+      <div class="mt-16 grid gap-4 md:grid-cols-3">
+        <article
+          v-for="feature in productFeatures"
+          :key="feature.title"
+          class="rounded-2xl border border-white/10 bg-white/5 p-6"
+        >
+          <BaseIcon
+            :name="feature.icon"
+            class="h-7 w-7 text-primary-300"
+            aria-hidden="true"
+          />
+          <h3 class="mt-5 !text-2xl text-white">{{ feature.title }}</h3>
+          <p class="mt-3 leading-7 text-secondary-200">
+            {{ feature.description }}
+          </p>
+        </article>
+      </div>
+
+      <div
+        class="mt-10 flex flex-wrap gap-x-6 gap-y-3 border-t border-white/10 pt-8 text-sm"
+      >
+        <BaseButton
+          to="https://www.youtube.com/@vuedesigner/playlists"
+          external
+          target="_blank"
+          variant="link"
+          color="white"
+          label="Video tutorials"
+        />
+        <BaseButton
+          to="https://pinegrow.com/docs/vue/support/"
+          external
+          target="_blank"
+          variant="link"
+          color="white"
+          label="Support"
+        />
+        <BaseButton
+          to="https://vuedesigner.com/#buy"
+          external
+          target="_blank"
+          variant="link"
+          color="white"
+          label="Purchase"
+        />
+        <BaseButton
+          to="https://discord.gg/BYp45Nnu5T"
+          external
+          target="_blank"
+          variant="link"
+          color="white"
+          label="Community forum"
+        />
       </div>
     </div>
-  </div>
+  </section>
 </template>
 <style scoped></style>

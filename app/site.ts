@@ -4,8 +4,9 @@
 
 export default {
   title: 'Vue Designer',
-  description: 'Vue Designer Nuxt Tailwind CSS - Quick start template',
-  logo: 'i-vscode-icons:file-type-coffeelint',
+  description:
+    'Build Vue interfaces visually with Vue Designer, Nuxt and Tailwind CSS.',
+  logo: 'i-logos-vue',
   author: 'Pinegrow',
   url: 'https://pg-nuxt-tailwindcss.netlify.app',
   github: 'https://github.com/pinegrow/pg-nuxt-tailwindcss',

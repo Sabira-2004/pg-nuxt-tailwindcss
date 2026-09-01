@@ -1,0 +1,8 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "prepare-pr",
+  "version": "0.1.0",
+  "description": "Prepare professional pull request descriptions from the current branch and Git changes.",
+  "license": "MIT",
+  "keywords": ["pull-request", "git", "code-review"]
+}

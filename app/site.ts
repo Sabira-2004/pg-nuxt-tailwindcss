@@ -4,9 +4,8 @@
 
 export default {
   title: 'Vue Designer',
-  description:
-    'A visual IDE for Vue applications with a Nuxt and Tailwind CSS starter.',
-  logo: 'i-vscode-icons:file-type-vue',
+  description: 'Vue Designer Nuxt Tailwind CSS - Quick start template',
+  logo: 'i-vscode-icons:file-type-coffeelint',
   author: 'Pinegrow',
   url: 'https://pg-nuxt-tailwindcss.netlify.app',
   github: 'https://github.com/pinegrow/pg-nuxt-tailwindcss',
@@ -28,15 +27,15 @@ export default {
         to: '/',
       },
       {
-        title: 'Quick start',
-        icon: 'i-mdi-rocket-launch-outline',
+        title: 'Quick Start',
+        icon: 'i-mdi-home',
         to: '/quick-start',
       },
     ],
     secondary: [
       {
         title: 'Subscribe',
-        icon: 'i-mdi-email-outline',
+        icon: 'i-mdi-home',
         to: '/subscribe',
       },
     ],

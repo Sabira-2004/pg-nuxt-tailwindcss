@@ -1,24 +1,34 @@
 <script setup lang="ts">
   const { allNavs, navsPrimary, navsSecondary, currentPath } = useNavMenu()
-  const desktopNavs = [...navsPrimary, ...navsSecondary]
 </script>
 <template>
   <div class="w-full">
-    <nav aria-label="Main navigation">
-      <div class="container mx-auto px-5 sm:px-6">
-        <div class="flex h-20 items-center justify-between">
-          <TheLogo />
-          <div class="flex items-center gap-1">
-            <NavPrimary
-              :navs="desktopNavs"
-              :current-path="currentPath"
-              class="hidden md:flex"
-            />
-            <DarkModeSwitch class="hidden md:block" />
-            <div class="flex items-center md:hidden">
-              <DarkModeSwitch />
-              <NavHamburger v-if="allNavs.length" />
+    <nav class>
+      <div class="container mx-auto px-4 sm:px-6">
+        <div class="flex h-24 items-center justify-between">
+          <div class="flex items-center justify-between w-full">
+            <div class="flex flex-shrink-0 items-center">
+              <TheLogo />
             </div>
+            <NavPrimary
+              :navs="navsPrimary"
+              :current-path="currentPath"
+              class="hidden sm:flex sm:ml-6"
+            />
+          </div>
+          <DarkModeSwitch />
+          <div class="-mr-2 items-center relative">
+            <NavHamburger
+              v-if="navsSecondary?.length"
+              class="hidden sm:block"
+            />
+            <NavHamburger v-if="allNavs.length" class="sm:hidden" />
+            <NavSecondary
+              v-if="navsSecondary?.length"
+              class="hidden sm:flex sm:justify-end absolute right-0 mt-4"
+              :navs="navsSecondary"
+              :current-path="currentPath"
+            />
           </div>
         </div>
       </div>
